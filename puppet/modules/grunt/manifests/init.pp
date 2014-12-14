@@ -20,7 +20,7 @@ class grunt::install{
 
   # install npm
   exec { 'npm':
-    command => 'curl https://npmjs.org/install.sh | /bin/sh',
+    command => 'curl -O -L https://npmjs.org/install.sh | /bin/sh',
     require => [Package['nodejs'], Package['curl']],
     environment => 'clean=yes',
   }
